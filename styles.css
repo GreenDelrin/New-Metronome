@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,700&display=swap');
+
+* {
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+html,
+body {
+    padding: 0;
+    margin: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 15px;
+
+}
+
+header {
+    background-color: grey;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.menu-btn {
+    cursor: pointer;
+}
+
+.menu-btn__burger,
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+    content: "";
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 5px 0;
+}
+
+.menu {
+    position: fixed;
+    top: 40px;
+    left: 0;
+    height: 100vh;
+    width: 0;
+    background-color: grey;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    height: 100%;
+}
+
+.menu__list li {
+    list-style: none;
+    margin: 1rem;
+}
+
+.menu__list li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.menu--open {
+    width: 50%;
+}
+
+
+/*
+@media (min-width: 768px) {
+    .menu {
+        position: relative;
+        height: auto;
+        width: auto;
+        background-color: transparent;
+        overflow: visible;
+        transition: none;
+    }
+
+    .menu__list {
+        flex-direction: row;
+        height: auto;
+    }
+
+    .menu__list li {
+        margin: 0 2rem;
+    }
+
+    .menu__list li a {
+        font-size: 1rem;
+    }
+}
+*/
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    padding: 1.2rem;
+    text-align: center;
+}
+
+#topSliders {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+}
+
+#currentComb,
+#currentBPM {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+input {
+    width: 90%;
+    margin: auto;
+    height: .4rem;
+    -webkit-appearance: none;
+    background: rgb(183, 183, 183);
+    box-shadow: 6px -8px 10px rgba(255, 255, 255, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background: red;
+    cursor: pointer;
+}
+
+button {
+    height: 2rem;
+    width: 5rem;
+    margin: 0 1rem 0 1rem;
+    background-color: rgb(166, 166, 166);
+    color: #fff;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 6px -8px 10px rgba(255, 255, 255, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+#metronome {
+    width: 100%;
+    padding-top: 1rem;
+}
+
+#metronomeButtons,
+#metronomePMButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+    cursor: pointer;
+}
+
+.pulse {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 2px solid black;
+    position: relative;
+}
+
+.halo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: pulsate linear 1s infinite;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+}
+
+@keyframes pulsate {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        transform: scale(1);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+    }
+}

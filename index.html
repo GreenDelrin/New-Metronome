@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Metronome</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu-btn">
+            <div class="menu-btn__burger"></div>
+        </div>
+        <nav class="menu">
+            <ul class="menu__list">
+                <li><a href="../Tuner/index.html">Tuner</a></li>
+                <li><a href="../FingerCombinations/index.html">Finger Combinations</a></li>
+                <li><a href="../Metronome/index.html">Metronome</a></li>
+                <li><a href="../Reading/index.html">Reading</a></li>
+                <li><a href="../SpeedChanger/index.html">Speed Changer</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="container">
+        <div class="pulse">
+            <div class="circle"><span id="whatBeat"></span></div>
+        </div>
+
+        <div id="metronome">
+            <p>Beats Per Bar: <span id="numOfBeats">4</span></p>
+            <input type="range" id="beatsPerBarInput" min="1" max="9" value="4" oninput="updateNumOfBeats()"><br>
+            <p>Bpm Speed</p>
+            <input type="range" id="bpmInput" min="40" max="220" value="130" oninput="updateBPM()"><br>
+            <p id="currentBPM">130</p>
+            <div id="metronomePMButtons">
+                <button id="bpm-minus">-5</button>
+                <button id="startStopButton">Start</button>
+                <button id="jazzBtn">Jazz:off</button>
+                <button id="bpm-plus">+5</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+
+</html>
